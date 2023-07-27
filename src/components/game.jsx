@@ -76,32 +76,26 @@ function Game({ difficulty, setDifficulty, playClickSound }) {
   }
 
   useEffect(() => {
-    setNumberOfCards(8);
     if (difficulty === "Easy") {
+      setNumberOfCards(8);
       let ourNumber = randomNumbersWithoutDuplicates(8);
       fetch("https://minecraft-ids.grahamedgecombe.com/items.json")
         .then((response) => response.json())
         .then((data) => setListOfCards([data[ourNumber[0]].name, data[ourNumber[1]].name, data[ourNumber[2]].name, data[ourNumber[3]].name, data[ourNumber[4]].name, data[ourNumber[5]].name, data[ourNumber[6]].name, data[ourNumber[7]].name]));
     }
     if (difficulty === "Medium") {
-      console.log("easy mode!");
-      setListOfCards(
-        <>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-        </>
-      );
+      setNumberOfCards(12);
+      let ourNumber = randomNumbersWithoutDuplicates(12);
+      fetch("https://minecraft-ids.grahamedgecombe.com/items.json")
+        .then((response) => response.json())
+        .then((data) => setListOfCards([data[ourNumber[0]].name, data[ourNumber[1]].name, data[ourNumber[2]].name, data[ourNumber[3]].name, data[ourNumber[4]].name, data[ourNumber[5]].name, data[ourNumber[6]].name, data[ourNumber[7]].name, data[ourNumber[8]].name, data[ourNumber[9]].name, data[ourNumber[10]].name, data[ourNumber[11]].name]));
     }
     if (difficulty === "Hard") {
-      console.log("easy mode!");
-      setListOfCards(
-        <>
-          <Card></Card>
-          <Card></Card>
-        </>
-      );
+      setNumberOfCards(16);
+      let ourNumber = randomNumbersWithoutDuplicates(16);
+      fetch("https://minecraft-ids.grahamedgecombe.com/items.json")
+        .then((response) => response.json())
+        .then((data) => setListOfCards([data[ourNumber[0]].name, data[ourNumber[1]].name, data[ourNumber[2]].name, data[ourNumber[3]].name, data[ourNumber[4]].name, data[ourNumber[5]].name, data[ourNumber[6]].name, data[ourNumber[7]].name, data[ourNumber[8]].name, data[ourNumber[9]].name, data[ourNumber[10]].name, data[ourNumber[11]].name, data[ourNumber[12]].name, data[ourNumber[13]].name, data[ourNumber[14]].name, data[ourNumber[15]].name]));
     }
   }, [difficulty]);
 
@@ -128,7 +122,9 @@ function Game({ difficulty, setDifficulty, playClickSound }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
               </button>
-              <h1>score: {clickedItems.length}/8</h1>
+              <h1>
+                score: {clickedItems.length}/{listOfCards.length}
+              </h1>
               <h1>{difficulty}</h1>
             </div>
 
