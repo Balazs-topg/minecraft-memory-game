@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import backgroundBrick from "/public/stone-bricks.webp";
 
 function Game({ difficulty, setDifficulty, playClickSound }) {
   const [listOfCards, setListOfCards] = useState([]);
@@ -104,7 +105,7 @@ function Game({ difficulty, setDifficulty, playClickSound }) {
       <>
         <div
           style={{
-            backgroundImage: "url(../public/stone-bricks.webp)",
+            backgroundImage: `url(${backgroundBrick})`,
             backgroundSize: "64px",
           }}
           className="text-white h-screen font-minecraft"

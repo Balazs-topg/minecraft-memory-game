@@ -1,12 +1,13 @@
 import InfoBar from "./info-bar";
 import ToggleSound from "./toggle-sound";
+import background from "/public/dirt.webp";
 
 function StartMenue({ playClickSound, setAudioIsEnabled, audioIsEnabled, infoIsShowing, setInfoIsShowing, difficulty, setDifficulty }) {
   if (difficulty === "none") {
     return (
       <div
         style={{
-          backgroundImage: "url(../public/dirt.webp)",
+          backgroundImage: `url(${background}`,
           backgroundSize: "64px",
         }}
         className="text-black h-screen font-minecraft"
