@@ -1,6 +1,7 @@
 import InfoBar from "./info-bar";
 import ToggleSound from "./toggle-sound";
 import background from "/public/dirt.webp";
+import logo from "/public/logo.png";
 
 function StartMenue({ playClickSound, setAudioIsEnabled, audioIsEnabled, infoIsShowing, setInfoIsShowing, difficulty, setDifficulty }) {
   if (difficulty === "none") {
@@ -15,7 +16,7 @@ function StartMenue({ playClickSound, setAudioIsEnabled, audioIsEnabled, infoIsS
         <div className="h-full w-full bg-slate-900 bg-opacity-50 flex justify-center">
           <div className="flex flex-col gap-4 items-center justify-center text-white text-xl">
             <div className="relative">
-              <img src="../public/logo.png" alt="" className="h-28" />
+              <img src={logo} alt="" className="h-28" />
               <div className="drop-shadow-xl">
                 <h1 className="text-yellow-400 drop-shadow-[2px_2px_0px_rgba(255,120,1,0.7)] text-3xl translate-x-10 animate-grow-shrink absolute right-0 bottom-0 rotate-12">Memory Game!</h1>
               </div>
