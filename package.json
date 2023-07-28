@@ -2,7 +2,7 @@
   "name": "minecraft-memory-game",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Balazs-topg.github.io/minecraft-memory-game",
+  "homepage": "https://Balazs-topg.github.io",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
